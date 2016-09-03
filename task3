@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title></title>
+<style type="text/css">
+html{
+    font-family:Microsoft YaHei, serif;
+    font-size: 62.5%;
+}
+
+*{padding:0;margin:0;}
+body{
+　　font: 1em/150% Arial,Helvetica,sans-serif;
+	width:100%;
+	max-width:1000px;
+　　}
+
+#head{
+	width:100%;
+	min-height:40px;
+	background-color:#331409;
+	position:relative;
+}
+
+#body{
+	width:100%;
+	min-height:88px;
+	background-color:#22292C;
+}
+
+#foot{
+	width:100%;
+	min-height:900px;
+	background:#68CDD5;
+}
+
+.foot_box{
+	width:70%;
+	margin:20% auto auto auto;
+}
+
+.alignleft{	
+			float:left;
+			margin-left:1em;
+			text-align:center;
+		}
+.alignright{  
+			float:right; 
+			margin-right:1em;
+			text-align:center;
+		} 
+#b{position:absolute;}
+#e{position:absolute;}
+
+.img-top{margin-top:1%;}
+.img-middle{margin-top:2em;}
+
+.icon-logo{margin:0 auto;max-width:185px;margin-top:5%;clear:both;}
+.content{width:70%;margin:0 auto;font-size:2rem;margin-top:10%;line-height:5rem;color:#fff;font-family:黑体;}
+
+.pargragh{font-family:黑体;font-size:2rem;color:#fff;}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var winW = window.screen.width;
+	var _w = 600;
+	if(winW < _w){
+		var aPic = document.getElementsByClassName("flo");
+		var top = document.getElementById("head").clientHeight;
+		var top2 = document.getElementById("head").clientHeight;
+		for(var i = 0;i<aPic.length;i++){
+			var _p = aPic[i];
+			var _ph = _p.width;
+			_p.width = _p.width * winW / _w;
+		}
+		var _pic2 = document.getElementsByClassName("img-top");
+		for(var i = 0;i<_pic2.length;i++){
+			var _p = _pic2[i];
+			var _pic_height = _p.height;
+			var _t = (top - _pic_height) / 2;
+			_p.style.marginTop = _t+"px";
+		}
+		
+		var _pic3 = document.getElementsByClassName("img-middle");
+		for(var i = 0;i<_pic3.length;i++){
+			var _p = _pic3[i];
+			var _pic_height = _p.height;
+			var _t = (top2 - _pic_height + top) / 2;
+			_p.style.marginTop = _t+"px";
+			
+		}
+		
+	}
+	onResize();
+}
+window.onresize=function(){
+	onResize();
+};
+function onResize(){
+	var oHeadWidth=document.getElementById('head').offsetWidth;
+	var oBodyWidth=document.getElementById('body').offsetWidth;
+	
+	document.getElementById('b').style.left=(oHeadWidth-document.getElementById('b').offsetWidth)/2+'px';
+	document.getElementById('e').style.left=(oBodyWidth-document.getElementById('e').offsetWidth)/2+'px';
+}
+
+</script>
+</head>
+
+<body >
+	<div class="container">
+		<div id="head" >
+				<img class="img-top alignleft flo" src="images/task3_03.png" id="a"/>
+				<img class="img-top flo" src="images/task3_05.png" id="b"/>
+				<img class="img-top alignright flo" src="images/task3_07.png" id="c"/>		
+		</div>
+		<div id="body">
+				<img class="img-middle alignleft flo" src="images/task3_12.png" id="d"/>
+				<img class="img-middle flo" src="images/task3_14.png" id="e"/>
+				<img class="img-middle alignright flo" src="images/task3_16.png" id="f"/>
+		</div>
+		<div id="foot" >
+			<div class="icon-back alignleft">
+				<img src="images/task3_23.png"  />
+			</div> 
+			<div class="icon-logo">	
+				<img src="images/task3_27.png" />
+			</div>
+			<div class="content">
+				<p>
+					葡萄藤轻游戏专注于桌游领域，提供在线杀人游戏，捉鬼，炸狼堡等多种聚会游戏，以及线下聚会桌游道具。
+				</p>
+			</div>
+			<div class="foot_box">
+				<div  class="alignleft pargragh">
+					<img src="images/task3_31.png" />
+					<p >
+						290560933
+					</p>
+				</div>
+				<div class="alignright pargragh">
+					<img src="images/task3_33.png" />
+					<p >
+						BJPTTeng
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
